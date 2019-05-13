@@ -5,6 +5,9 @@ user_dir=/home/$user
 find $user_dir/Pictures/ -type f -exec chmod 600 {} \;
 find $user_dir/Pictures/ -type d -exec chmod 700 {} \;
 
+find $user_dir/Documents/misc -type f -exec chmod 600 {} \;
+find $user_dir/Documents/misc -type d -exec chmod 700 {} \;
+
 find $user_dir/.config/Signal -type f -exec chmod 600 {} \;
 find $user_dir/.config/Signal -type d -exec chmod 700 {} \;
 
