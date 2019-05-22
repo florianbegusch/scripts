@@ -1,22 +1,14 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
+
 user=`cut -d : -f 1 /etc/passwd | grep flo`
 user_dir=/home/$user
+script_file=$user_dir/Documents/scripts/set___user_rw_noone_else.sh
 
-find $user_dir/Pictures/ -type f -exec chmod 600 {} \;
-find $user_dir/Pictures/ -type d -exec chmod 700 {} \;
-
-find $user_dir/Documents/misc -type f -exec chmod 600 {} \;
-find $user_dir/Documents/misc -type d -exec chmod 700 {} \;
-
-find $user_dir/.config/Signal -type f -exec chmod 600 {} \;
-find $user_dir/.config/Signal -type d -exec chmod 700 {} \;
-
-find $user_dir/.config/fish -type f -exec chmod 600 {} \;
-find $user_dir/.config/fish -type d -exec chmod 700 {} \;
-
-find $user_dir/.local/share/fish -type f -exec chmod 600 {} \;
-find $user_dir/.local/share/fish -type d -exec chmod 700 {} \;
-
-find $user_dir/Documents/wir -type f -exec chmod 600 {} \;
-find $user_dir/Documents/wir -type d -exec chmod 700 {} \;
+$script_file $user_dir/Pictures/
+$script_file $user_dir/Documents/misc
+$script_file $user_dir/.config/Signal
+$script_file $user_dir/.config/fish
+$script_file $user_dir/.local/share/fish
+$script_file $user_dir/Documents/wir
+$script_file $user_dir/Downloads/ISOs
 
