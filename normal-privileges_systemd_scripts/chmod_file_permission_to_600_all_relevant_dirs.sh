@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-user=`cut -d : -f 1 /etc/passwd | grep flo`
+user=`cut -d : -f 1 /etc/passwd | grep flo | head -n 1`
 user_dir=/home/$user
 script_file=$user_dir/Documents/scripts/set___user_rw_noone_else.sh
 
