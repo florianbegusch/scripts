@@ -3,6 +3,9 @@
 set -u
 set -e
 set -o pipefail
+#set -f  # disable globbing/filename expansion
+shopt -s failglob  # error on unexpaned globs
+
 
 script_file=~/Documents/scripts/set___user_rw_noone_else.sh
 
