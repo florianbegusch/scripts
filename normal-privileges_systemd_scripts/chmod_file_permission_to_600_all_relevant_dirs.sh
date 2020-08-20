@@ -15,7 +15,7 @@ $script_file ~/Pictures
 $script_file ~/Documents/misc
 [[ "$(uname)" = Darwin ]] || $script_file ~/Documents/wir
 
-[[ "$(uname)" = Darwin ]] && $script_file ~/Library/Application\ Support/Signal/ || $script_file ~/.config/Signal
+[[ "$(uname)" = Darwin ]] && $script_file ~/Library/Application\ Support/Signal/ || $script_file ~/.config/Signal*
 [[ "$(uname)" = Darwin ]] && $script_file ~/Library/'Application Support/Standard Notes' || $script_file ~/.config/'Standard Notes'
 $script_file ~/'Standard Notes Backups'
 
