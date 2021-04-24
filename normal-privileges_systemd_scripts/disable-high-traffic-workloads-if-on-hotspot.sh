@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "$(iwgetid -r)" = iPhone ]; then
+if [ "$(iwgetid -r)" = iPhone ] || [ "$1" = -f ]; then
   set -x
   systemctl --user disable ***REMOVED***_and_***REMOVED***.service
   systemctl --user disable container-image-update.service
