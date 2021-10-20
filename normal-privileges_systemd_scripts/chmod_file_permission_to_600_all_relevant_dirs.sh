@@ -9,25 +9,29 @@ shopt -s failglob  # error on unexpaned globs
 
 script_file=~/Documents/scripts/set___user_rw_noone_else.sh
 
-set -x
 
-$script_file ~/Pictures
-$script_file ~/Documents/misc
-[[ "$(uname)" = Darwin ]] || $script_file ~/Documents/wir
+"$script_file" ~/.ssh
+"$script_file" ~/.openstack
+"$script_file" ~/.kube
 
-[[ "$(uname)" = Darwin ]] && $script_file ~/Library/Application\ Support/Signal/ || $script_file ~/.config/Signal*
-[[ "$(uname)" = Darwin ]] && $script_file ~/Library/'Application Support/Standard Notes' || $script_file ~/.config/'Standard Notes'
-$script_file ~/'Standard Notes Backups'
+"$script_file" ~/Pictures
+"$script_file" ~/Documents/misc
+[[ "$(uname)" = Darwin ]] || "$script_file" ~/Documents/wir
 
-$script_file ~/.config/fish
-$script_file ~/.local/share/fish
-$script_file ~/.bash*
+if [ "$(uname)" = Darwin ]; then
+  config_path=~/Library/Application\ Support
+else
+  config_path=~/.config
+fi
+"$script_file" "$config_path"/Signal*
+"$script_file" "$config_path"/'Standard Notes'
+"$script_file" ~/'Standard Notes Backups'
 
-$script_file ~/Documents/passwds
-$script_file ~/.openstack
-$script_file ~/.kube
+"$script_file" "$config_path"/fish
+"$script_file" ~/.local/share/fish
+"$script_file" ~/.bash*
 
-$script_file ~/ISOs
+"$script_file" ~/.password-store*
 
-set +x
+"$script_file" ~/ISOs
 
