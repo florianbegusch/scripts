@@ -12,6 +12,7 @@ script_file=~/Documents/scripts/set___user_rw_noone_else.sh
 
 "$script_file" ~/.ssh
 "$script_file" ~/.openstack
+"$script_file" ~/.config/openstack
 "$script_file" ~/.kube
 
 "$script_file" ~/Pictures
@@ -27,7 +28,7 @@ fi
 "$script_file" "$config_path"/'Standard Notes'
 "$script_file" ~/'Standard Notes Backups'
 
-"$script_file" "$config_path"/fish
+"$script_file" ~/.config/fish
 "$script_file" ~/.local/share/fish
 "$script_file" ~/.bash*
 
