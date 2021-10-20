@@ -31,7 +31,9 @@ fi
 "$script_file" ~/.local/share/fish
 "$script_file" ~/.bash*
 
-"$script_file" ~/.password-store*
+"$script_file" ~/.password-store -path ~/.password-store/.extensions -prune -o || true
+"$script_file" ~/.password-store-work -path ~/.password-store-work/.extensions -prune -o || true
+"$script_file" ~/.password-store-private -path ~/.password-store-private/.extensions -prune -o || true
 
 "$script_file" ~/ISOs
 
